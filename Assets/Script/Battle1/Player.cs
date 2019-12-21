@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         control_move();
 
         //右Shiftキーが押されたら
-        if (Input.GetKeyDown(KeyCode.RightShift) && !timer.Zero_totaltime() && HP > 0)
+        if (Input.GetKeyDown(KeyCode.RightShift) && !timer.Zero_totaltime() && HP > 0 && Time.timeScale != 0)
         {
             rb2d.velocity = new Vector2(0, 0);
 
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
         }
 
         //右Shiftキーが離されたら
-        if (Input.GetKeyUp(KeyCode.RightShift) && !timer.Zero_totaltime() && HP > 0)
+        if (Input.GetKeyUp(KeyCode.RightShift) && !timer.Zero_totaltime() && HP > 0 && Time.timeScale != 0)
         {
             //半分の大きさ、重さになる
             transform.localScale /= RightShift_size_scale;
