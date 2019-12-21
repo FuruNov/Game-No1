@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     //スコアの定義
     public Text statusText; //Text用変数
 
-    //ジャストアクション判定
+    ////ジャストアクション判定
 
     //マイサブユニット
     public Partner myPartner;
