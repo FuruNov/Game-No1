@@ -2350,6 +2350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1828096095}
   - component: {fileID: 1828096094}
+  - component: {fileID: 1828096097}
   - component: {fileID: 1828096096}
   m_Layer: 0
   m_Name: Battle_Control
@@ -2489,6 +2490,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1828096097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828096093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de2b070524bfd74a908b6957d3b4453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1874943937
 GameObject:
   m_ObjectHideFlags: 0
