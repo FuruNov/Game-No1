@@ -24,8 +24,13 @@ public class Player : MonoBehaviour
 
     //スコアの定義
     public Text statusText; //Text用変数
+<<<<<<< HEAD
     
     //ジャストアクション判定//
+=======
+
+    //ジャストアクション判定
+>>>>>>> parent of a8eadbf... Test2
 
     //マイサブユニット
     public Partner myPartner;
