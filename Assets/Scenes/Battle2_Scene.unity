@@ -313,7 +313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80488074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.86, y: 15.7, z: -7}
+  m_LocalPosition: {x: 0, y: 0, z: -7}
   m_LocalScale: {x: 1.675, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 91163492}
   - component: {fileID: 91163494}
   - component: {fileID: 91163493}
+  - component: {fileID: 91163495}
   m_Layer: 0
   m_Name: Battle_Control
   m_TagString: Untagged
@@ -345,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91163491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -445, y: -229.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1439181391}
@@ -459,13 +460,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b390ab5f3e2ccf74ebac4671b2bb494e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  my_player1: {fileID: 1649666228}
-  my_player2: {fileID: 577851966}
+  my_player1: {fileID: 1649666235}
+  my_player2: {fileID: 577851961}
   Resulttext: {fileID: 938691699}
   timer: {fileID: 275331219}
   Scene_move_sound: {fileID: 8300000, guid: 851021889c3fef34a9960cc7e2879130, type: 3}
-  my1_deadly_skill_sound: {fileID: 0}
-  my2_deadly_skill_sound: {fileID: 0}
+  my1_deadly_skill_sound: {fileID: 8300000, guid: 9a1fd99762ae3d0449f3e7f975470690,
+    type: 3}
+  my2_deadly_skill_sound: {fileID: 8300000, guid: 1bdce7e419ed6c94cb7811b148feb263,
+    type: 3}
+--- !u!114 &91163495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91163491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de2b070524bfd74a908b6957d3b4453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseText: {fileID: 938691699}
 --- !u!1 &275331218
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552603267}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: -16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 562209865}
@@ -1232,6 +1248,7 @@ GameObject:
   - component: {fileID: 577851966}
   - component: {fileID: 577851965}
   - component: {fileID: 577851964}
+  - component: {fileID: 577851961}
   m_Layer: 0
   m_Name: Player
   m_TagString: Enemy_Player
@@ -1239,6 +1256,42 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &577851961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577851960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8b58056145dbd4687760147db48f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  max_HP: 0
+  size_scale: 1
+  mass_scale: 1
+  LightShift_speed_scale: 2
+  RightShift_size_scale: 2
+  RightShift_mass_scale: 3
+  affect_timescale: 3
+  add_collide_HP: 10
+  deadly_gauge: 0
+  charge_deadly_gauge: 1
+  max_deadly_gauge: 10
+  statusText: {fileID: 1119831042}
+  myPartner: {fileID: 833705727}
+  move_speed: 10
+  mygameObject: {fileID: 577851960}
+  collide_Enter_effect: {fileID: 1540057952536042065, guid: a03cfd85dd2ef1641adc5876c524cac1,
+    type: 3}
+  timer: {fileID: 275331219}
+  rb2d: {fileID: 577851962}
+  collide_sound: {fileID: 8300000, guid: 07f50a339182330439e1c8330dfa03d7, type: 3}
+  enemy_collide_sound: {fileID: 8300000, guid: ed5edfba481225046a35e364943806ca, type: 3}
+  Item_get_sound: {fileID: 8300000, guid: d1227522fa7f71a4497d79cc4c65d9f7, type: 3}
+  deadly_skill_sound: {fileID: 8300000, guid: 1bdce7e419ed6c94cb7811b148feb263, type: 3}
 --- !u!50 &577851962
 Rigidbody2D:
   serializedVersion: 4
@@ -1268,7 +1321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577851960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.6321144, y: 8.1, z: 7.7265625}
+  m_LocalPosition: {x: 20.6, y: 7.6, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1138790366}
@@ -1396,30 +1449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342dd6590d8f09749bb34c4a42663de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
-  max_HP: 100
-  size_scale: 1
-  mass_scale: 1
-  LightShift_speed_scale: 2
-  RightShift_size_scale: 2
-  RightShift_mass_scale: 3
-  affect_timescale: 3
-  add_collide_HP: 10
-  deadly_gauge: 0
-  charge_deadly_gauge: 1
-  max_deadly_gauge: 10
-  statusText: {fileID: 1119831042}
-  myPartner: {fileID: 833705727}
-  move_speed: 10
-  mygameObject: {fileID: 577851960}
-  collide_Enter_effect: {fileID: 6382441513048525207, guid: af4f21f69cfbd0d4eab56224ecbf6c16,
-    type: 3}
-  timer: {fileID: 275331219}
-  rb2d: {fileID: 577851962}
-  collide_sound: {fileID: 8300000, guid: 07f50a339182330439e1c8330dfa03d7, type: 3}
-  enemy_collide_sound: {fileID: 8300000, guid: ed5edfba481225046a35e364943806ca, type: 3}
-  Item_get_sound: {fileID: 8300000, guid: d1227522fa7f71a4497d79cc4c65d9f7, type: 3}
-  deadly_skill_sound: {fileID: 0}
 --- !u!58 &577851967
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1627,7 +1656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625199098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.207033, y: -24.24, z: 23.517195}
+  m_LocalPosition: {x: 47.2, y: -24.7, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1296803126}
@@ -1642,7 +1671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 784088144}
-  - component: {fileID: 784088145}
+  - component: {fileID: 784088146}
   m_Layer: 0
   m_Name: Item_Random_Generate
   m_TagString: Untagged
@@ -1658,13 +1687,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784088143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 101.03335, y: 7.245575, z: -199.85}
+  m_LocalPosition: {x: 0, y: 0, z: -199.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1647598615}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &784088145
+--- !u!114 &784088146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1673,7 +1702,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 784088143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d834591ff6e649f4d9625bd244eeb214, type: 3}
+  m_Script: {fileID: 11500000, guid: e057e0f54c91d5144bcb06b701a87d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item:
@@ -1849,7 +1878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833705726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.632114, y: 8.1, z: 7.7265625}
+  m_LocalPosition: {x: 30.6, y: 7.6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1138790366}
@@ -2058,7 +2087,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967408064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.88, y: 4.5, z: 11.2992735}
+  m_LocalPosition: {x: 0.38, y: -11.5, z: 0}
   m_LocalScale: {x: 6.522871, y: 6.522871, z: 6.522871}
   m_Children: []
   m_Father: {fileID: 2031529005}
@@ -2357,7 +2386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138790365}
   m_LocalRotation: {x: -0, y: -0, z: -0.70710623, w: 0.7071074}
-  m_LocalPosition: {x: 6.421939, y: 20.48927, z: -7.7265625}
+  m_LocalPosition: {x: 6.6, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 577851963}
@@ -2389,7 +2418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296803125}
   m_LocalRotation: {x: -0, y: -0, z: -0.70710623, w: 0.7071074}
-  m_LocalPosition: {x: 10.299116, y: 37.06418, z: -23.517195}
+  m_LocalPosition: {x: 10.7, y: 36.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1649666230}
@@ -2421,7 +2450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439181390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 445, y: 229.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 883216266}
@@ -2550,7 +2579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607437881}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1608022419}
@@ -2586,8 +2615,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BattleAudioSource: {fileID: 1607437882}
-  my_player: {fileID: 1649666228}
-  enemy_player: {fileID: 577851966}
+  my_player: {fileID: 1649666235}
+  enemy_player: {fileID: 577851961}
   timer: {fileID: 275331219}
   Battle_Control: {fileID: 91163494}
 --- !u!4 &1608022419
@@ -2629,7 +2658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647598614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -105.21818, y: 14.762852, z: 199.85}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 784088144}
@@ -2651,6 +2680,7 @@ GameObject:
   - component: {fileID: 1649666228}
   - component: {fileID: 1649666232}
   - component: {fileID: 1649666231}
+  - component: {fileID: 1649666235}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2670,30 +2700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342dd6590d8f09749bb34c4a42663de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
-  max_HP: 0
-  size_scale: 1
-  mass_scale: 1
-  LightShift_speed_scale: 2
-  RightShift_size_scale: 2
-  RightShift_mass_scale: 5
-  affect_timescale: 2
-  add_collide_HP: 10
-  deadly_gauge: 0
-  charge_deadly_gauge: 1
-  max_deadly_gauge: 10
-  statusText: {fileID: 993265604}
-  myPartner: {fileID: 625199099}
-  move_speed: 10
-  mygameObject: {fileID: 1649666227}
-  collide_Enter_effect: {fileID: 5236022829635108347, guid: 9a464646485317e4a8249725e19fa347,
-    type: 3}
-  timer: {fileID: 275331219}
-  rb2d: {fileID: 1649666229}
-  collide_sound: {fileID: 8300000, guid: 045608c4af991094fb39e8c001e0f809, type: 3}
-  enemy_collide_sound: {fileID: 8300000, guid: 12bc8a5d4caebed48b0402da1b85e3d4, type: 3}
-  Item_get_sound: {fileID: 8300000, guid: a49326421a5266a41a4e37dc51a460a6, type: 3}
-  deadly_skill_sound: {fileID: 0}
 --- !u!50 &1649666229
 Rigidbody2D:
   serializedVersion: 4
@@ -2723,7 +2729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649666227}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.207033, y: -24.24, z: 23.517195}
+  m_LocalPosition: {x: 37.2, y: -24.7, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1296803126}
@@ -2904,6 +2910,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1649666235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649666227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8b58056145dbd4687760147db48f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
+  max_HP: 0
+  size_scale: 1
+  mass_scale: 1
+  LightShift_speed_scale: 2
+  RightShift_size_scale: 1.5
+  RightShift_mass_scale: 3
+  affect_timescale: 2
+  add_collide_HP: 10
+  deadly_gauge: 0
+  charge_deadly_gauge: 1
+  max_deadly_gauge: 10
+  statusText: {fileID: 993265604}
+  myPartner: {fileID: 625199099}
+  move_speed: 10
+  mygameObject: {fileID: 1649666227}
+  collide_Enter_effect: {fileID: 1540057952536042065, guid: a03cfd85dd2ef1641adc5876c524cac1,
+    type: 3}
+  timer: {fileID: 275331219}
+  rb2d: {fileID: 1649666229}
+  collide_sound: {fileID: 8300000, guid: 045608c4af991094fb39e8c001e0f809, type: 3}
+  enemy_collide_sound: {fileID: 8300000, guid: 12bc8a5d4caebed48b0402da1b85e3d4, type: 3}
+  Item_get_sound: {fileID: 8300000, guid: a49326421a5266a41a4e37dc51a460a6, type: 3}
+  deadly_skill_sound: {fileID: 8300000, guid: 9a1fd99762ae3d0449f3e7f975470690, type: 3}
 --- !u!1 &1694564742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,7 +2970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694564742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.196566, y: 22.450445, z: -10.665149}
+  m_LocalPosition: {x: -9.196566, y: 22.450445, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 17451634}
@@ -3038,7 +3080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031529004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.32891622, y: 11.559631, z: -11.2992735}
+  m_LocalPosition: {x: -0.32891622, y: 11.559631, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 967408065}

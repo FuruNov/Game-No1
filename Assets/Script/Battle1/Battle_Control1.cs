@@ -49,6 +49,7 @@ public class Battle_Control1 : MonoBehaviour
             && my_player.deadly_gauge == my_player.max_deadly_gauge
             && !timer.Zero_totaltime()
             && my_player.HP > 0
+            && Time.timeScale != 0
            )
         {
             switch(Skill_Select.skill_select_number)
