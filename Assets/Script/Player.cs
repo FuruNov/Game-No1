@@ -24,13 +24,6 @@ public class Player : MonoBehaviour
 
     //スコアの定義
     public Text statusText; //Text用変数
-<<<<<<< .merge_file_a21024
-
-    //ジャストアクション判定
-=======
-    
-    //ジャストアクション判定//
->>>>>>> .merge_file_a13804
 
     //マイサブユニット
     public Partner myPartner;
